@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Image Search</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Google Search</a>
+        <a href="advanced_search.html">Advanced Search</a>
+    </nav>
+
+    <div class="container">
+        <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo" class="logo">
+        <div class="searchbox">
+            <input type="text" class="input" onkeydown="if(event.keyCode==13){performImageSearch();return false;}">
+            <input type="submit" class="search-button" value="Search Images" onclick="performImageSearch()">
+        </div>
+    </div>
+
+    <script>
+        function performImageSearch() {
+            const searchTerm = document.querySelector(".input").value;
+            window.location.href =
+                "https://www.google.com/search?tbm=isch&q=" + encodeURIComponent(searchTerm);
+        }
+    </script>
+</body>
+</html>
